@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "8c0a3cb5-ab33-4301-9e97-4887d35eda7f",
+		"name": "APIs acsel test",
+		"description": "Colección de APIs para sistemas de seguros",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13160512"
+	},
+	"item": [
+		{
+			"name": "API-Clientes",
+			"item": [
+				{
+					"name": "CrearClientes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Alvaro\",\r\n    \"direccion\":\"La Pastora\",\r\n    \"telefono\":\"+584125796820\",\r\n    \"genero\":\"Masculino\",\r\n    \"edad\":30,\r\n    \"identificacion\":\"V20613004\",\r\n    \"contrasena\":\"12345\",\r\n    \"estado\":\"True\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ActualizarCliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BorrarCliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API-Cuentas",
+			"item": [
+				{
+					"name": "CrearCuentas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cuentas\":[\r\n        {\r\n            \"numeroCuenta\":334455,\r\n            \"tipoCuenta\":\"Ahorro\",\r\n            \"saldoInicial\":500,\r\n            \"estado\":\"True\",\r\n            \"cliente\":\"Alvaro\"\r\n        },\r\n        {\r\n            \"numeroCuenta\":445566,\r\n            \"tipoCuenta\":\"Corriente\",\r\n            \"saldoInicial\":300,\r\n            \"estado\":\"True\",\r\n            \"cliente\":\"Alvaro\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/cuentas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"cuentas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ActualizarCuenta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"numeroCuenta\":112233,\r\n            \"tipoCuenta\":\"Ahorro\",\r\n            \"saldoInicial\":500,\r\n            \"estado\":\"True\",\r\n            \"idCliente\":\"2\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/cuentas/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"cuentas",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "112233"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BorrarCuenta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/cuentas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"cuentas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API-Movimientos",
+			"item": [
+				{
+					"name": "CrearMovimientos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"movimientos\":[\r\n        {\r\n            \"numeroCuenta\":112233,\r\n            \"tipoCuenta\":\"Ahorro\",\r\n            \"saldoInicial\":100,\r\n            \"estado\":\"True\",\r\n            \"tipoMovimiento\":\"Deposito\",\r\n            \"monto\":50\r\n        },\r\n        {\r\n            \"numeroCuenta\":445566,\r\n            \"tipoCuenta\":\"Corriente\",\r\n            \"saldoInicial\":150,\r\n            \"estado\":\"True\",\r\n            \"tipoMovimiento\":\"Deposito\",\r\n            \"monto\":70\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/movimientos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"movimientos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BorrarMovimiento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/movimientos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"movimientos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API-Reporte",
+			"item": [
+				{
+					"name": "Reporte-FechaXUsuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/reportes?fecha=25/09/2024-25/09/2024&cliente=Alvaro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"reportes"
+							],
+							"query": [
+								{
+									"key": "fecha",
+									"value": "25/09/2024-25/09/2024"
+								},
+								{
+									"key": "cliente",
+									"value": "Alvaro"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
